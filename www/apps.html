@@ -1,0 +1,67 @@
+{{#def.Header}}
+<div class="uk-overflow-container">
+    
+    <h1>Apps! Apps! Apps!</h1>
+
+    <p>
+        Make sure you have Master node a Worker or two before installing Apps.
+        Head back to <a href="{{=DRApp.link('install')}}">Install</a> for how.
+        Else hit up the Apps page on your Master.
+    </p>
+
+    <h2>Preview</h2>
+
+    <p>
+        Before an App can be installed, it has to be previewed. 
+        In the future, I'll have a bunch of Apps ready to be installed. For now, we'll have to preview manually.
+    </p>
+    
+    <p>
+        In the future, I'll have a bunch of Apps period.  For now there's just one: Redis.
+    </p>
+
+    <ol>
+        <li>Select GitHub.</li>
+        <li>Enter 'klot-io/redis' in owner/project field.</li>
+        <li>Click the Preview button.</li>
+        <li>In 10-20 second, Redis will appear in the Apps listing.</li>
+        <li>Click to view the App so we can Install it.</li>
+    </ol>
+
+    <h2>Labels</h2>
+
+    <p>
+        Some Apps require that you label nodes to install service on speciallly enabled nodes os just consistently. 
+        The App's page allows you to set these labels easily with checkboxes.
+    </p>
+
+    <ol>
+        <li>In the Redis App.</li>
+        <li>Click a checkbox under labels to install it on a specfic Node.</li>
+        <li>It will be automatically saved.</li>
+        <li>You can uncheck a checkbox to remvoe a label.</li>
+    </ol>
+
+    <p>
+        For you Kubernetes savy folks, yes this is labeling Nodes through traditional Kubernetes. 
+    </p>
+
+    <h2>Install</h2>
+
+    <p>
+        When Ready, click Install.  You can head over to the Pods page to watch the Pods come up. 
+    </p>
+
+    <h2>Great Success!</h2>
+
+    <p>
+        Congrats! You now have Redis running in your home cluster.
+    </p>
+
+    <p>
+        Currently, you can only access this Redis instance from Kubernetes directly.
+        Check out <a href="{{=DRApp.link('development')}}">Development</a> to setup access to your cluster through kubectl.
+    </p>
+
+</div>
+{{#def.Footer}}

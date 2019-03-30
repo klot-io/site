@@ -1,0 +1,69 @@
+{{#def.Header}}
+<div class="uk-overflow-container">
+    
+    <h1>What is this Krazy Thang?</h1>
+
+    <h2>tl;dr</h2>
+
+    <p>
+        Super Easy Kubernetes Cloud and Downloadable Apps on Raspberry Pi's.
+        <a href="{{=DRApp.link('install')}}">Install</a> it RIGHT MEOW.
+    </p>
+
+    <h2>Long, Rambling, Dad Story</h2>
+
+    <p>
+        Ok, awhile back I took Kubernetes threw it on Raspberry Pi's and created multi-microservice 
+        App that yells at my kids to get ready in the morning (in an Australian accent). 
+    </p>
+
+    <p>
+        No, not kidding.  This is literally how my kids get ready in the morning now.
+    </p>
+
+    <p>
+        Originally, I did this as a joke because I was bored. 
+        I was thinking of controlling my window A/C unit with a Raspberry Pi, having not found a challenging enough project (Retro Pi is so damn easy).
+        But then I thought, that's totally overkill.  That's way too much unused processing power.
+        But then I thought, I could use that extra power as a home cloud, having created little Apps for my kids to play with.
+        Going further, I could probably do something with Kubernetes, making it easier to deploy changes vs. SSH'ing or even burning SD cards.
+        So I set out on a crazy, probalby impossible journey to put Kubernetes on Raspberry Pi's 
+    </p>
+
+    <p>
+        Here's the weird thing: it worked.  
+    </p>
+
+    <p>
+        Beyond that success, I realized I had created a platform.  
+        When I say I installed Kuberenetes and the App runs on that, I'm not kidding.  
+        I have Pods interacting with the Pi's GPIO; DaemonSets deploying to Node that I simply label that they have a Button; 
+        those DaemonSets pushing events to Redis channels; Daemons reacting to those events, saying Chores are done, and on and on.
+    </p>
+
+    <p>
+        What's really cool is the kids like to use this (called Nandy), creating their own chores or just chaning the order, etc. 
+        Since my kids and are having a blast with all this, I thought I'd share what I'd done. 
+    </p>
+
+    <p>
+        So what this does is allow you to easily grab a handful of Raspberry Pi's, install Kuberenetes on them. 
+        Hit up <a href="{{=DRApp.link('install')}}">Install</a> for how.
+    </p>
+
+    <p>
+        Once running, you can install Apps from repos I created in GitHub. 
+        Right now, I just have the Redis service, but I'm looking to add more.
+        Check out <a href="{{=DRApp.link('apps')}}">Apps</a> for more.
+    </p>
+
+    <p>
+        If you're curious on how it all work, head over to <a href="{{=DRApp.link('architecture')}}">Architecture</a>.
+    </p>
+
+    <p>
+        And if you're eager to write your own Apps, AWESOME. <a href="{{=DRApp.link('development')}}">Development</a> is just for you.
+    </p>
+
+</div>
+{{#def.Footer}}

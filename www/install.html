@@ -1,0 +1,111 @@
+{{#def.Header}}
+<div class="uk-overflow-container">
+    
+    <h1>Make it Happen!</h1>
+
+    <h2>Caveat Emptor</h2>
+
+    <p>
+        That's Latin for "cover your butt." This is brand new, not secure, and by not means production ready.
+        I've worked in Magnetics, Electrical, Software, Site Reliability, and Infrastructure Engineering.  
+        There are many methods used here I would NEVER use in a real environment at a real company.
+        Eventually, we can lock things down with certs and what not, but for now, consider this experimental.
+    </p>
+
+    <div class="uk-alert uk-alert-danger">
+        <p>Always be careful downloading and installing other people's code. </p>
+    </div>
+
+    <div class="uk-alert uk-alert-warning">
+        <p>Only do this at home on a secure network. </p>
+    </div>
+
+    <div class="uk-alert uk-alert-success">
+        <p>Make sure you try in the face of failure, having fun along the way.</p>
+    </div>
+
+    <h2>Requirements</h2>
+
+    <ul>
+        <li>
+            At minimum you'll need two Raspberry Pi's, probably the <a href="https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/">3B+</a>.
+            <ul>
+                <li>Maybe it'll work with others?  I just haven't tried.</li>
+                <li>If you want to do more stuff, use like 3 or 4.</li>
+            </ul>
+        </li>
+        <li>
+            You'll also need to be able to wire a Raspberry Pi to your network, ethernet style.
+            <ul>
+                <li>This is just for setup, and you only have to do it one at a time.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Process</h2>
+
+    <ol>
+        <li>
+            Download the <a href="https://klot-io.sfo2.cdn.digitaloceanspaces.com/pi-0.1.img">pi-0.1.img</a> and burn it into an SD card. 
+            <ol>
+                <li>I'm fond of <a href="https://www.samsung.com/us/computing/memory-storage/memory-cards/microsdhc-evo-select-memory-card-w--adapter-32gb--2017-model--mb-me32ga-am/">Samsung's EVO Select 32Gb</a> cards but use whatever you like. </li>
+                <li>I'm not an expert in which cards perform best or whatever.</li>
+            </ol>
+        </li>
+        <li>
+            Power Up
+            <ol>
+                <li>Insert SD card into Pi.  Wire to your network (ethernet cable). Power up.</li>
+                <li>Wait a minute or so as the OS expands the filesystem. </li>
+                <li>Get impatient and go to <a href="http://klot-io.local/">http://klot-io.local/</a> anyway, understanding it might not come up right away.</li>
+                <li>The site will recognize it has default settings and automatically log you in with the password 'kloudofthings'.</li>
+                <li>Oh btw, you're logging into your new Pi right now.</li>
+            </ol>
+        </li>
+        <li>
+            Configure Master
+            <ol>
+                <li>Set a new password. This'll be both for the GUI/API you're using and the pi account on the Pi (make sure it's like 8 chars long).</li>
+                <li>Decide whether to enable SSH or leave it disabled.  It's up to you, and you can change later through this page.</li>
+                <li>Enter the WiFi settings for your network or leave it as is to stay wired.</li>
+                <li>Set the role to Master for this first one and give your cluster a name, lowercase, no spaces (I should have something check that and password too). </li>
+                <li>Click Config.  You should now have to log in with your new password.</li>
+                <li>Note the site URL changed to (cluster)-klot-io.local. This is the hostname of the Master now and will be your home base going forward.</li>
+            </ol>
+        </li>
+        <li>
+            Join Workers
+            <ol>
+                <li>Once the status is Master, burn another SD card, and plug it into a new Pi, wire to the network, and power up.</li>
+                <li>Head over the Nodes page. After a few minutes, a Node called "klot-io" willl appear.  That's your new Node.</li>
+                <li>To have it join as a Worker with the same settings as the Master save the name, give it a name and click Join. </li>
+                <li>To have it join as a Worker with different settings, click it's name and Config on its own site.</li>
+                <li>Back at the Master's Nodes, page, wait 20 seconds or so, and it'll appear in the Node listing as (name)-(cluster)-klot-io.local</li>
+                <li>Repeat for as many Workers as needed.  Just make sure each name is unique (ya, should probably write something to check this too). </li>
+            </ol>
+        </li>
+    </ol>
+
+    <p>
+        Congrats!  You have a Kubrernetes Cluster on Raspberry Pi's!
+        Hit up <a href="{{=DRApp.link('apps')}}">Apps</a> for what's next.
+    </p>
+
+    <h2>Advanced</h2>
+
+    <p>
+        There's some other ways to install that are a little more secure and a little more involved.
+        Head over to <a href="{{=DRApp.link('development')}}">Development</a> for more. 
+    </p>
+
+    <h2>Culus Faciem Tuam</h2>
+
+    <p>
+        Ok, that's the real Latin phrase for "cover your butt."
+        And please, don't think I'm good at Latin.
+        I took a year in college, but I totally used Google translate for this bit.
+        I ain't gonna front.
+    </p>
+
+</div>
+{{#def.Footer}}

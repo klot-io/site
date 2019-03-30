@@ -1,0 +1,30 @@
+
+<div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+    <h1 class="uk-text-center">Kloud of Things I/O</h1>
+    <nav class="uk-navbar uk-margin-bottom">
+        <ul class="uk-navbar-nav">
+            <li {{? DRApp.current.paths[0] == '' }}class="uk-active"{{?}}>
+                <a href="{{=DRApp.link('home')}}">Home</a>
+            </li>
+        </ul>
+        <ul class="uk-navbar-nav">
+            <li {{? DRApp.current.paths[0] == 'install' }}class="uk-active"{{?}}>
+                <a href="{{=DRApp.link('install')}}">Install</a>
+            </li>
+        </ul>
+        <ul class="uk-navbar-nav">
+            <li {{? DRApp.current.paths[0] == 'apps' }}class="uk-active"{{?}}>
+                <a href="{{=DRApp.link('apps')}}">Apps</a>
+            </li>
+        </ul>
+        <ul class="uk-navbar-nav">
+            <li {{? DRApp.current.paths[0] == 'architecture' }}class="uk-active"{{?}}>
+                <a href="{{=DRApp.link('architecture')}}">Architecture</a>
+            </li>
+        </ul>
+        <ul class="uk-navbar-nav">
+            <li {{? DRApp.current.paths[0] == 'development' }}class="uk-active"{{?}}>
+                <a href="{{=DRApp.link('development')}}">Development</a>
+            </li>
+        </ul>
+    </nav>
