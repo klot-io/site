@@ -44,6 +44,12 @@
 
     <h2>Process</h2>
 
+    <p>
+        NOTE:  There's a lot of stuff coming up and will eventually be consistent.
+        If something doesn't work, wait a bit and try again.
+        I'll be working on smoothing evrerything out soon.
+    </p>
+
     <ol>
         <li>
             Download the <a href="https://klot-io.sfo2.cdn.digitaloceanspaces.com/pi-0.1.img.zip">pi-0.1.img.zip</a> and burn it into an SD card. 
@@ -56,9 +62,10 @@
             Power Up
             <ol>
                 <li>Insert SD card into Pi.  Wire to your network (ethernet cable). Power up.</li>
-                <li>Wait a minute or so as the OS expands the filesystem. </li>
-                <li>Get impatient and go to <a href="http://klot-io.local/">http://klot-io.local/</a> anyway, understanding it might not come up right away.</li>
-                <li>The site will recognize it has default settings and automatically log you in with the password 'kloudofthings'.</li>
+                <li>Wait a few minutes or so as the OS expands the filesystem. </li>
+                <li>Get impatient and go to <a href="http://klot-io.local/">http://klot-io.local/</a> anyway, understanding it might not come up right away or be persnickety.</li>
+                <li>The site will recognize it has default settings and automatically log you in.</li>
+                <li>If my browser trickery fails, just log in with the password 'kloudofthings'.</li>
                 <li>Oh btw, you're logging into your new Pi right now.</li>
             </ol>
         </li>
@@ -78,9 +85,11 @@
             <ol>
                 <li>Once the status is Master, burn another SD card, and plug it into a new Pi, wire to the network, and power up.</li>
                 <li>Head over the Nodes page. After a few minutes, a Node called "klot-io" willl appear.  That's your new Node.</li>
+                <li>You'll want to wait a few minutes as the hard drive reconfigures and the Pi reboots, it'll be be persnickety otherwise.</li>
                 <li>To have it join as a Worker with the same settings as the Master save the name, give it a name and click Join. </li>
                 <li>To have it join as a Worker with different settings, click it's name and Config on its own site.</li>
                 <li>Back at the Master's Nodes, page, wait 20 seconds or so, and it'll appear in the Node listing as (name)-(cluster)-klot-io.local</li>
+                <li>If you've switched from Wired to Wireless, it may hang as NotReady.  Give it a minute and then power cycle the Worker.</li>
                 <li>Repeat for as many Workers as needed.  Just make sure each name is unique (ya, should probably write something to check this too). </li>
             </ol>
         </li>
