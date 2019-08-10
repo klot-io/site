@@ -54,6 +54,3 @@ For anyone wondering how the hell the DNS is working, we're using that same Serv
 
 Currently, you can only access this Redis instance from Kubernetes directly.
 Check out [klot-io/pi-setup](https://github.com/klot-io/pi-setup) to setup access to your cluster through kubectl.
-
-</div>
-{{#def.Footer}}
