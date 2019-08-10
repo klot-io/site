@@ -1,12 +1,14 @@
-# klot.io documentation
+# Klot I/O
 
-klot.io is a system for creating a Kubernetes cloud on Raspberry Pis so you can run microservices on them, like a text-to-speech app.
+Klot I/O, short for Kloud of Things I/O, is a Kubernetes cloud running on Raspberry Pi’s with the ability to download and install Apps that can utilize the I/O hardware of those Pi’s.  
 
-I've included a sample project on this site. When you're done with it, you'll have a Raspberry Pi that'll convert text to speech (in an Australian account if you so desire).
+Klot I/O lowers the barrier of entry to many relevant technologies (Docker, Kubernetes, REST, Python, GPIO) by allowing someone with no knowledge to easily setup said technologies in their own home. 
+
+I've included a sample project on this site. When you're done with it, you'll have a Raspberry Pi that'll convert text to speech (in an Australian account if you so desire). [More Info](http://klot.io)
 
 ## Requirements and background
 
-YOu need to be able to burn an image on a Raspber
+You need to be able to burn an image on a Raspber
 
 ### Kubernetes
 
@@ -30,16 +32,9 @@ This project showcases only two Pi features - their ability to play sound, and t
 
 ## Install
 
-<TODO: copy installation instructions here>
+Instructino
 
 ## Next steps
 
-If you want configure a sample app that tells your kids to wake up, in an Australian accent, go to the [sample app setup instructions](link).
+If you want configure a sample app that tells your kids to wake up, in an Australian accent, go to [Apps](Apps.md).
 
-Or,
-
-If you'd rather develop your own microservices to run on Kubernetes, read [about application setup in general](link).
-
-Or,
-
-If you have other purposes for running Kubernetes on Raspberry Pis, you're done! You can log in to [http://klot-io.local/](http://klot-io.local/) any time to reach your master node.
