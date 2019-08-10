@@ -9,40 +9,36 @@
         Else hit up the Apps page on your Master.
     </p>
 
-    <h2>Download</h2>
-
     <p>
-        Before an App can be installed, it has to be downloaded. 
-        In the future, I'll have a bunch of Apps already downloaded.
-        For now, we'll have to download manually.
-    </p>
-    
-    <p>
-        In the future, I'll have a bunch of Apps period.  
+        In the future, I'll have a bunch of Apps.  
         For now there's just Nandy Speech and Redis.
         Nandy Speech allows you hook up some speakers to your Pi and make it say stuff, even in various accents.
         It'll be used by the forthcoming Nandy Chore to yell at you or your kids to do stuff. 
-        Redis is a general Redis server which can be used by other Apps, like Nandy Speech.
+        Redis is a general Redis server which can be used by other Apps, like Nandy Speech in this case.
     </p>
 
+    <h2>Install</h2>
+    
     <ol>
         <li>Go to the Apps page.</li>
         <li>Select GitHub.</li>
         <li>Enter 'nandy-io/speech' in owner/project field.</li>
-        <li>Click the Download button.</li>
-        <li>In 10-20 seconds, Nandy Speech adn Redis will appear in the Apps listing.</li>
+        <li>Click the Install button.</li>
+        <li>In 10-20 seconds, Nandy Speech and Redis will appear in the Apps listing, prepping to be installed.</li>
     </ol>
 
     <h2>Labels</h2>
 
     <p>
-        Some Apps require that you label nodes to install service on speciallly enabled nodes os just consistently. 
+        Some Apps require that you label nodes.
+        In some cases, it's so the App knows which Nodes have special equipment attached, like speakers for Nandy Speech.
+        In other cases, it's just for consistency.  So if a part of the App suddenly dies, it'll come back on the same Node, like with Redis.
         The App's page allows you to set these labels easily with checkboxes.
     </p>
 
     <ol>
         <li>Click the Redis App.</li>
-        <li>Click a checkbox under labels to install it on a specfic Node (required).</li>
+        <li>Click a checkbox under labels to place it on a specfic Node (required).</li>
         <li>It will be automatically saved.</li>
         <li>You can uncheck a checkbox to remvoe a label.</li>
         <li>Go back to Apps.</li>
@@ -59,7 +55,7 @@
     <h2>Install</h2>
 
     <p>
-        When Ready, click Install and head over to the Pods page to watch the Pods come up.
+        After labelling, head over to the Pods page to watch the Pods come up.
         Once they're all up, head back to Apps, and click Open in the Nandy Speech App.
         Type something (preferably inappropriate) and listen to your own shenanigans.
     </p>
@@ -67,14 +63,14 @@
     <h2>Great Success!</h2>
 
     <p>
-        Congrats! You now have Redis running in your home cluster.
+        Congrats! You now have Nandy Speech (and a Redis server) running in your home cluster!
     </p>
 
     <p>
         Yep, that's a URL on your local network based on the App and Service name. 
-        For you Kubernetes savy folks, yes the site on each node act as a distributed Ingress controller using LoadBalancer Service definitions.
-        For anyone wondering how the hell the DNS is working, we're using those same Service to register CNAMES through avahi / mDNS.  Neat huh?
-        See <a href="{{=DRApp.link('architecture')}}">Architecture</a> to learn more.
+        For you Kubernetes savy folks, yes nginx serving the site on each node also acts as a distributed Ingress controller using LoadBalancer Service definitions.
+        For anyone wondering how the hell the DNS is working, we're using that same Service to register CNAMES through avahi / mDNS.  Neat huh?
+        See <a href="{{=DRApp.link('documentation')}}">Documentation</a> to learn more.
     </p>
 
     <p>

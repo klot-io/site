@@ -3,66 +3,60 @@
     
     <h1>What is this Krazy Thang?</h1>
 
-    <h2>tl;dr</h2>
-
     <p>
-        Super Easy Kubernetes Cloud and Downloadable Apps on Raspberry Pi's.
-        <a href="{{=DRApp.link('install')}}">Install</a> it RIGHT MEOW.
+        Kloud of Things I/O is a Kubernetes cloud running on Raspberry Pi’s with the ability to download and install Apps that can utilize the I/O hardware of those Pi’s.  
     </p>
 
-    <h2>Long, Rambling, Dad Story</h2>
+    <h2>What goal it solves</h2>
 
     <p>
-        Ok, awhile back I took Kubernetes threw it on Raspberry Pi's and created multi-microservice 
-        App that yells at my kids to get ready in the morning (in an Australian accent). 
+        Klot I/O lowers the barrier of entry to many relevant technologies (Docker, Kubernetes, REST, Python, GPIO) by allowing someone with no knowledge to easily setup said technologies in their own home. 
     </p>
 
-    <p>
-        No, not kidding.  This is literally how my kids get ready in the morning now.
-    </p>
+    <h2>Why solving it this way is </h2>
+
+    <h3>hard:</h3>
 
     <p>
-        Originally, I did this as a joke because I was bored. 
-        I was thinking of controlling my window A/C unit with a Raspberry Pi, having not found a challenging enough project (Retro Pi is so damn easy).
-        But then I thought, that's totally overkill.  That's way too much unused processing power.
-        But then I thought, I could use that extra power as a home cloud, having created little Apps for my kids to play with.
-        Going further, I could probably do something with Kubernetes, making it easier to deploy changes vs. SSH'ing or even burning SD cards.
-        So I set out on a crazy, probably impossible journey to put Kubernetes on Raspberry Pi's 
+        Setting up and using Docker, Kubernetes, REST, Python, GPIO is hard for someone not having regular exposure to these technologies. Each technology requires patience and diligence to get started and comes with many usage possibilities with only a subset of those possibilities overlapping in coherent, functional manner. 
     </p>
 
-    <p>
-        Here's the weird thing: it worked.  
-    </p>
+    <h3>good:</h3>
 
     <p>
-        Beyond that success, I realized I had created a platform.  
-        When I say I installed Kuberenetes and the App runs on that, I'm not kidding.  
-        I have Pods interacting with the Pi's GPIO; DaemonSets deploying to Node that I simply label that they have a Button; 
-        those DaemonSets pushing events to Redis channels; Daemons reacting to those events, saying Chores are done, and on and on.
+        Klot I/O is contained on a single image that when installed onto Raspberry Pi’s, creates a localized website (and some other services) that makes connecting those Pi’s to each other and installing pre-existing Apps as simple as filling out forms and clicking buttons. From there, users can dive deeper, from accessing Kubernetes directly, to poking around the various microservices, to writing and deploying their own microservices on Kubernetes, to even writing and sharing their own Apps for others to use.
     </p>
 
-    <p>
-        What's really cool is the kids like to use this (called Nandy), creating their own chores or just changing the order, etc. 
-        Since my kids and are having a blast with all this, I thought I'd share what I'd done. 
-    </p>
+    <h3>preventing:</h3>
 
     <p>
-        So what this does is allow you to easily grab a handful of Raspberry Pi's, install Kubernetes on them. 
-        Hit up <a href="{{=DRApp.link('install')}}">Install</a> for how.
+        Klot I/O mainly prevents the infrastructure problem pets over cattle. While it is more than possible to setup Kubernetes locally with minikube and even Docker, it’s not in the true spirit of Kubernetes which is made to run on multiple independent nodes that can be pulled in and swapped out as necessary. Creating multiple nodes with Raspberry Pi’s from the same image is more in line with that Kubernetes overall goal as well as the goal to treat infrastructure as cattle, not pets.  Since all Pi’s have the same base image and all differences are managed by Klot I/O and Kubernetes, no Pi is special and can be pulled in and swapped out as necessary. This makes maintaining the cluster much easier than say looking up HOWTO pages and trying to remember what worked and what didn’t each time you get a new Pi or an SD card dies. 
+    </p>
+
+    <h2>Recommendations</h2>
+
+    <p>
+        Currently, Klot I/O is not production ready and not secure outside a protected network. It is best used by hobbyists looking to create advanced home automation and applications.  It should not be on a publicly accessible network or with publicly exposed devices. Eventually, Klot I/O will become more secure but not yet. 
+    </p>
+
+    <h2>More Info</h2>
+
+    <p>Wondering how all this happened?  Check out <a href="{{=DRApp.link('backstory')}}">Backstory</a></p>
+
+    <p>
+        If you're curious on how it all work, head over to <a href="{{=DRApp.link('overview')}}">Overview</a>.
     </p>
 
     <p>
-        Once running, you can install Apps from repos I created in GitHub. 
-        Right now, I just have the Redis service, but I'm looking to add more.
-        Check out <a href="{{=DRApp.link('apps')}}">Apps</a> for more.
+        To see all the nitty gritty details, hit up <a href="{{=DRApp.link('architecture')}}">Architecture</a>.
     </p>
 
     <p>
-        If you're curious on how it all work, head over to <a href="{{=DRApp.link('architecture')}}">Architecture</a>.
+        Ready to get started? Hit up <a href="{{=DRApp.link('install')}}">Install</a> for how.
     </p>
 
     <p>
-        And if you're eager to write your own Apps, AWESOME. <a href="{{=DRApp.link('development')}}">Development</a> is just for you.
+        Once running, you can install Apps from repos I created in GitHub. Right now, I just have the Redis service, but I'm looking to add more. Check out <a href="{{=DRApp.link('apps')}}">Apps</a> for more.
     </p>
 
 </div>
