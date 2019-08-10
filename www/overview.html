@@ -1,0 +1,240 @@
+{{#def.Header}}
+<div class="uk-overflow-container">
+    
+    <h1>How the &*%$#! Does This Thing Work?</h1>
+
+    <h2>Proununciation</h2>
+
+    <p>
+        First things first: how to say "klot.io".  
+        It's pronounced "clout-i-o" not "clot-ee-eye-ee-eye-oh".
+        A common misconception but imagine the sheer embarassment and horror from 
+        misprouncing the latest and greatest open source project that no one's ever heard of.
+        That's almost as bad as mispelling the first subheading of an instructional page.
+    </p>
+
+    <p>
+        Perish the thought.
+    </p>
+
+    <h2>Caveat Emptor</h2>
+
+    <p>
+        That's Latin for "cover your butt." This is brand new, not secure, and by not means production ready.
+        I've worked in Magnetics, Electrical, Software, Site Reliability, and Infrastructure Engineering.  
+        There are many methods used here I would NEVER use in a real environment at a real company.
+        (Hey, let's log in but not bother with TLS because REASONS)
+        Eventually, we can lock things down with certs and what not, but for now, consider this experimental.
+    </p>
+
+    <div class="uk-alert uk-alert-danger">
+        <p>Always be careful downloading and installing other people's code. </p>
+    </div>
+
+    <div class="uk-alert uk-alert-warning">
+        <p>Only do this at home on a secure network. </p>
+    </div>
+
+    <div class="uk-alert uk-alert-success">
+        <p>Make sure you try in the face of failure, having fun along the way.</p>
+    </div>
+
+    <h2>Cut My Life Into Pieces - This is my Last Resort</h2>
+
+    <p>
+        So what's going on here?
+        <ul>
+            <li>We have Raspberry Pi's.</li>
+            <li>We have Kubernetes running on our Raspberry Pi's.</li>
+            <li>We have Services managing Kubernetes.</li>
+            <li>We have Apps being intalled through those Services.</li>
+        </ul>
+        Let's break it down how everything works together.
+    </p>
+
+    <h2>Raspberry Pi's</h2>
+
+    <p>
+        The SD card is the Raspberry Pi's hard drive.
+        When we install an image onto the SD card, we install an operating system, like installing Window ME from floppy disks. 
+        The operating system we're using is just Raspbian with some stuff added.
+        Raspbian is a variant of Debian, which is distribution of Linux.
+    </p>
+
+    <p>
+        With Linux, you can use it like desktop, with your mouse and windows, etc. like a happy little quaint home.
+        Or you can use it like a server, with just a login prompt, like a commerical building. (yes, it's more complicated than that, but this is just an overview)
+    </p>
+
+    <p>
+        In our case, we're using our Raspberry Pi's like servers, like a block of big ol' non descript buildings.
+        Imagine the giant servers that run the Internet, making clouds, serving websites, and what have you.
+        Our Raspberry Pi's are just miniature versions of those. 
+    </p>
+
+    <h2>Kubernetes</h2>
+
+    <p>
+        Kubernetes is a Container Cloud Technology. 
+        As they say, there is no Cloud - it's just someone else's computer (yours in this case).
+        What they mean is that a Cloud is just a bunch of computers, which "rent out" space.
+    </p>
+
+    <p>
+        Think of it like apartment complex vs. a house. 
+    </p>
+
+    <p>
+        With a (single family) house there's one building, one residence.
+        The occupants are responsible for all aspects, like power, water, sewer (well, in my house where I have a well and septic system, and have to talk to the power company from time to time).
+        Moving in or out is a big deal because you have to set all sorts of stuff up, get inspections, etc. 
+    </p>
+
+    <p>
+        With an apartment complex, there's multiple buildings, each with multiple residences.
+        The occupants aren't responsible for all aspects, like power, water, sewer (apparently, you can just call some guy and he fixes everything? So weird.).
+        With less responsibilities to transfer, it becomes easier to move in and move out.
+    </p>
+
+    <p>
+        Originally, Clouds were done with Virtual Machines, not Containers. 
+    </p>
+
+    <p>
+        A Virtual Machine is a simulated computer in software (tenant) being run on a physical computer's hardware (host).
+        This is done through interacting directly with the Physical Processor of the host machine.
+        Think of a Virtual Machine occupying an unfurnished apartment.
+        There's hook ups for water, and power, but you have to bring in all your own furniture and the amount of space is for memory and processing is fixed.
+    </p>
+
+    <p>
+        A Container is also a simulated computer in software (tenant) being run on a physical computer's hardware (host).
+        This is done through interacting directly with the Operating System the host machine, not the hardware, using something called Docker.
+        Think of a Container occupying an furnished apartment.
+        There's already beds, a washing machine, shared storage spaces, even a pool (of resources) that can be shared, like  memory and processing.
+        You can even set limits on how much each tenant can use. 
+    </p>
+
+    <p>
+        We're using Kubernetes, a Container Cloud, because it's even easier to move in and out of a furnished apartment vs. an unfurnished one. 
+    </p>
+
+    <h2>Services</h2>
+
+    <p>
+        While using Kubernetes is easy, easier than using physical or even virtual machines anyway, setting up Kubernetes is not.
+        That's where Services come in.
+        Think of them like Contractors turning your Pi's into an apartment complex, all with different jobs:
+        <ul>
+            <li>GUI - The adorable little web site you've been using.</li>
+            <li>API - The brains of the adorablness, what the GUI's talking to.</li>
+            <li>Daemon - The brawns of the operation, what really does most of the work.</li>
+            <li>/boot - A back door of control directly from your SD card.</li>
+        </ul>
+        Each one of these is running / working on every Raspberry Pi. 
+    </p>
+
+    <p>
+        Kubernetes is Cluster technology, meaning it's a process running on serveral servers, all working together. 
+        This doesn't happen automatically (yet?).
+        We have to install Docker and Kubernetes and then start Kubernetes on each Pi, telling each what they're supposed to do.
+        Lucky for you, the Klot I/O image you burned already has Kubernetes and Docker installed. 
+        Also lucky for you, <a href="https://github.com/klot-io/site/blob/master/Install.md">Install</a> walks you through the process of telling the Contractors how you want your cluster configured.
+    </p>
+
+    <p>
+        The Master Node is like the office of the apartment complex.
+        Worker Nodes are like the pure rental units of the apartment complex. 
+        The Master Node responsible for moving tenants in and out of the cloud, signing leases, figuring out building to move into, giving them keys, etc. 
+        The Master Node is also responsibile for making sure the apartment buildings are up to snuff, taking a building out of "rentability" if it's not working. 
+        Usually tenants don't live here because the Master Node is usually pretty busy, but they can (the Redis App allows for it).
+    </p>
+
+    <p>
+        Going through the <a href="https://github.com/klot-io/site/blob/master/Install.md">Install</a> process, this how the Services interact:
+        <ol>
+            <li>The User hits the GUI.</li>
+            <li>The GUI hits the API.</li>
+            <li>The API reads the current configuration and sends it back to the GUI.</li>
+            <li>The GUI present the infomration to the User in a friendly, easy to read format.</li>
+            <li>The User changes the information in the GUI.</li>
+            <li>The GUI sends the new Configuration to the API.</li>
+            <li>The API saves the Configuration as files.</li>
+            <li>The Daemon sees those files have changed and executes those changes.</li>
+        </ol>
+        Here's how the information is used:
+        <ul>
+            <li>account - Locks down the building with a new password, like cutting new keys for the locks (password) and outside access (ssh).</li>
+            <li>network - Configures how the building is to be communicated with, hardline (wired) vs. celluar (wireless).</li>
+            <li>
+                kubernetes
+                <ul>
+                    <li>cluster - The name of the appartment complex this building belongs to</li>
+                    <li>role - Whether this building is the head office or a rental</li>
+                    <li>name - If a rental, the unit number so we know how to reference it, to folks to move it, etc.</li>
+                </ul>
+            </li>
+        </ul>
+        This is also where the Node is renamed.  
+        A Master node becomes (cluster)-klot-io.local and each rental becomes (name)-(cluster)-klot-io.local.  
+        Once renamed, they become addressible from your entire network, like getting an address from the post office. 
+        If you're wondering, yes, you can can have multiple clusters on the same network.
+    </p>
+
+    <p>
+        Like contractors turning a block of commerical buildings into an apartment complex, the Services in the <a href="https://github.com/klot-io/site/blob/master/Install.md">Install</a> process turns our generic Raspberry Pi's into a functional, addressible Kubernetes cluster. 
+    </p>
+
+    <h2>Apps</h2>
+
+    <p>
+        Functionality is typically deployed on Kubernetes using Manifests in a Declarative style.
+        Declarative means we tell Kubernetes what we exepct to run where, and it changes itself to match our expectations. 
+        Resources are our expectations.  We put Resources in Kubernetes and it uses them as a goal.
+        Manifests are just Resources in file form, usually YAML, and we usually send these files to Kubernetes to create or change Resources.
+        In this case, we're using our Services like Movers, figuring what we expect, and transporting that to our apartment complex.
+    </p>
+
+    <p>
+        An App in Klot I/O is a Custom (as in I created it) Resource in Kubernetes. It describes:
+        <ul>
+            <li>Resources to deploy to Kubernetes.</li>
+            <li>Resources accesible from inside Kubernetes.</li>
+            <li>Resources accesible from outside Kubernetes.</li>
+            <li>Other Apps, or really type of Apps, required by this App.</li>
+            <li>How to give this App access to another.</li>
+            <li>How to give Users access to the App.</li>
+        </ul>
+        For those in the know with K-town (what I've just decided to call Kubernetes), the App Custom Resource Definition is created when the Master Node is spun up. 
+    </p>
+
+    <p>
+        This is what happened when we went through the <a href="https://github.com/klot-io/site/blob/master/Apps.md">Apps</a> process:
+        <ol>
+            <li>User enters nandy-io/speech into the GUI and clicks Install.</li>
+            <li>GUI sends that to the API.</li>
+            <li>API uses source to download the klot-io-app.yaml from the nandy-io/speech GitHub repo.</li>
+            <li>API creates an App Resource in Kubernetes from file contents sets action to 'Install'.</li>
+            <li>Daemon downloads all the Manifests listed in the Speech App.</li>
+            <li>Daemon downloads and install the Redis App (because Speech App says it needs it).</li>
+            <li>Daemon configures Speech App using the Redis App's settings.</li>
+            <li>Daemon creates a URL for us to access Speech App.</li>
+        </ol>
+        And with that, we tell Kubernetes how everything should be and it gets to work on that.
+        Heading over to Pods showed us how it was it was going.
+    </p>
+
+    <p>
+        Like movers reading manifests and executing work order, the Services in the <a href="https://github.com/klot-io/site/blob/master/Apps.md">Apps</a> process moved functionality into our Kubernetes apartment complex. 
+    </p>
+
+    <h2>Culus Faciem Tuam</h2>
+
+    <p>
+        Ok, that's the real Latin phrase for "cover your butt."
+        And please, don't think I'm good at Latin.
+        I took a year in college, but I totally used Google translate for this bit.
+        I ain't gonna front.
+    </p>
+
+{{#def.Footer}}

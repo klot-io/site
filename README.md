@@ -2,11 +2,11 @@
 
 klot.io is a system for creating a Kubernetes cloud on Raspberry Pis so you can run microservices on them, like a text-to-speech app.
 
-I've included a sample project on this site. When you're done with it, you'll have two Raspberry Pi's that tell your kids to wake up, in an Australian accent.
+I've included a sample project on this site. When you're done with it, you'll have a Raspberry Pi that'll convert text to speech (in an Australian account if you so desire).
 
 ## Requirements and background
 
-Conceptual background for making the most of klot.io, and required materials and infrastructure.
+YOu need to be able to burn an image on a Raspber
 
 ### Kubernetes
 

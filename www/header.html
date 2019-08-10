@@ -6,25 +6,20 @@
             <li {{? DRApp.current.paths[0] == '' }}class="uk-active"{{?}}>
                 <a href="{{=DRApp.link('home')}}">Home</a>
             </li>
-        </ul>
-        <ul class="uk-navbar-nav">
-            <li {{? DRApp.current.paths[0] == 'install' }}class="uk-active"{{?}}>
-                <a href="{{=DRApp.link('install')}}">Install</a>
+            <li {{? DRApp.current.paths[0] == 'backstory' }}class="uk-active"{{?}}>
+                <a href="{{=DRApp.link('backstory')}}">Backstory</a>
             </li>
-        </ul>
-        <ul class="uk-navbar-nav">
-            <li {{? DRApp.current.paths[0] == 'apps' }}class="uk-active"{{?}}>
-                <a href="{{=DRApp.link('apps')}}">Apps</a>
+            <li {{? DRApp.current.paths[0] == 'overview' }}class="uk-active"{{?}}>
+                <a href="{{=DRApp.link('overview')}}">Overview</a>
             </li>
-        </ul>
-        <ul class="uk-navbar-nav">
             <li {{? DRApp.current.paths[0] == 'architecture' }}class="uk-active"{{?}}>
                 <a href="{{=DRApp.link('architecture')}}">Architecture</a>
             </li>
-        </ul>
-        <ul class="uk-navbar-nav">
-            <li {{? DRApp.current.paths[0] == 'development' }}class="uk-active"{{?}}>
-                <a href="{{=DRApp.link('development')}}">Development</a>
+            <li {{? DRApp.current.paths[0] == 'install' }}class="uk-active"{{?}}>
+                <a href="https://github.com/klot-io/site/blob/refactor/Install.md">Install</a>
+            </li>
+            <li {{? DRApp.current.paths[0] == 'apps' }}class="uk-active"{{?}}>
+                <a href="https://github.com/klot-io/site/blob/refactor/Apps.md">Apps</a>
             </li>
         </ul>
     </nav>
