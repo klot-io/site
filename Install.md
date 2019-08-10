@@ -1,7 +1,6 @@
-Installation
-============
+# Installation
 
-# Requirements
+## Requirements
 
 - At minimum you'll need two Raspberry Pi's, probably the [3B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)
   - Maybe it'll work with others?  I just haven't tried.
@@ -9,12 +8,12 @@ Installation
 - You'll also need to be able to wire a Raspberry Pi to your network, ethernet style.
   - This is just for setup, and you only have to do it one at a time.
 
-# Assumptions
+## Assumptions
 
 - Your network has DHCP and you plan to use it
 - You know how to set IP addresses on your network
 
-# Process
+## Process
 
 NOTE:  There's a lot of stuff coming up and will eventually be consistent. If something doesn't work, wait a bit and try again. I'll be working on smoothing everything out.
 
@@ -46,10 +45,3 @@ NOTE:  There's a lot of stuff coming up and will eventually be consistent. If so
   - Repeat for as many Workers as needed.  Just make sure each name is unique (ya, should probably write something to check this too). 
 
 Congrats!  You have a Kubrernetes Cluster on Raspberry Pi's! Hit up [Apps](Apps.md) for what's next.
-
-# Advanced
-
-There's some other ways to install that are a little more secure and a little more involved.
-If you're comfortable creating files on the SD card's /boot partitation, check out <a href="{{=DRApp.link('boot')}}">/boot</a>.
-If you're down with Docker and local dev and have a Mac (only for now, sorries!) maybe <a href="{{=DRApp.link('development')}}">Development</a> is right for you. 
-
