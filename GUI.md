@@ -76,12 +76,12 @@ If you click on a row, you get a deeper view into the App.
 - labels - Labels for the App, how to tag specific Nodes for specific uses.
   - I like to install Redis and on DB's on specific Node because either I have an external drive attached or I want the data kept in one place.
   - Certain Apps will only deploy functionality on Nodes that have hardware attached, like speakers, a button, or even a camera.
-    - action - What you intended the App to do.
-    - status - Where the App is currently at.
-    - error - If anythign went terribly wrong, that'll have the traceback.
-    - publications - Services available from this App.
-    - subscriptions - Requirements for this App satisfied by other Apps.
-    - source - Where this App came from.
-    - resources - Tbe resources created when this App is installed.
-    - publish - Spec's for publications.
-    - subscribe - Spec's for subscriptions.
+- action - What you intended the App to do.
+- status - Where the App is currently at.
+- error - If anythign went terribly wrong, that'll have the traceback.
+- publications - Services available from this App.
+- subscriptions - Requirements for this App satisfied by other Apps.
+- source - Where this App came from.
+- resources - Tbe resources created when this App is installed.
+- publish - Spec's for publications.
+- subscribe - Spec's for subscriptions.
