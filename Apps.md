@@ -52,5 +52,7 @@ Yep, that's a URL on your local network based on the App and Service name.
 For you Kubernetes savy folks, yes nginx serving the site on each node also acts as a distributed Ingress controller using LoadBalancer Service definitions.
 For anyone wondering how the hell the DNS is working, we're using that same Service to register CNAMES through avahi / mDNS.  Neat huh?
 
+## Advanced
+
 Currently, you can only access this Redis instance from Kubernetes directly.
 Check out [klot-io/pi-setup](https://github.com/klot-io/pi-setup) to setup access to your cluster through kubectl.
