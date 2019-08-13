@@ -1,45 +1,39 @@
-# klot.io documentation
+# What is this Krazy Thang?
 
-klot.io is a system for creating a Kubernetes cloud on Raspberry Pis so you can run microservices on them, like a text-to-speech app.
+Kloud of Things I/O is a Kubernetes cloud running on Raspberry Pi’s with the ability to download and install Apps that can utilize the I/O hardware of those Pi’s.  
 
-I've included a sample project on this site. When you're done with it, you'll have a Raspberry Pi that'll convert text to speech (in an Australian account if you so desire).
+## What goal it solves
 
-## Requirements and background
+Klot I/O lowers the barrier of entry to many relevant technologies (Docker, Kubernetes, REST, Python, GPIO) by allowing someone with no knowledge to easily setup said technologies in their own home. 
 
-YOu need to be able to burn an image on a Raspber
+## Why solving it this way is
 
-### Kubernetes
+### hard
 
-klot.io enables <TODO: unique use case for k8s>, which you can read about in [docname](doclink).
+Setting up and using Docker, Kubernetes, REST, Python, GPIO is hard for someone not having regular exposure to these technologies. Each technology requires patience and diligence to get started and comes with many usage possibilities with only a subset of those possibilities overlapping in coherent, functional manner. 
 
-This project assumes <TODO: what level of> familiarity with Kubernetes. If you're just getting started with Kubernetes, read [name](link).
+### good
 
-### Raspberry Pis
+Klot I/O is contained on a single image that when installed onto Raspberry Pi’s, creates a localized website (and some other services) that makes connecting those Pi’s to each other and installing pre-existing Apps as simple as filling out forms and clicking buttons. From there, users can dive deeper, from accessing Kubernetes directly, to poking around the various microservices, to writing and deploying their own microservices on Kubernetes, to even writing and sharing their own Apps for others to use.
 
-Most Raspberry Pis aren't linked together in a local cloud. klot.io rectifies that, so you have all the power of orchestration to run your internet of things. To read more about unique things you can do with Pis when they're networked like this, read [docname](doclink).
+### preventing
 
-This project showcases only two Pi features - their ability to play sound, and their ability to connect to your local ethernet network. If you want to learn more about what Pis can do, and dream up all kinds of interesting apps you can run your new local cloud, read [name](link).
+Klot I/O mainly prevents the infrastructure problem pets over cattle. While it is more than possible to setup Kubernetes locally with minikube and even Docker, it’s not in the true spirit of Kubernetes which is made to run on multiple independent nodes that can be pulled in and swapped out as necessary. Creating multiple nodes with Raspberry Pi’s from the same image is more in line with that Kubernetes overall goal as well as the goal to treat infrastructure as cattle, not pets.  Since all Pi’s have the same base image and all differences are managed by Klot I/O and Kubernetes, no Pi is special and can be pulled in and swapped out as necessary. This makes maintaining the cluster much easier than say looking up HOWTO pages and trying to remember what worked and what didn’t each time you get a new Pi or an SD card dies. 
 
-### Microservices
+## Recommendations
 
-<TODO: say something about microservices and link to another doc on the site about what you can do with them>
+Currently, Klot I/O is not production ready and not secure outside a protected network. It is best used by hobbyists looking to create advanced home automation and applications.  It should not be on a publicly accessible network or with publicly exposed devices. Eventually, Klot I/O will become more secure but not yet. 
 
-### Prerequisites
+## More Info
 
-- <TODO: list all materials and networks needed>
+[Main site](http://www.klot.io)
 
-## Install
+Wondering how all this happened?  Check out [Backstory](http://www.klot.io/#/backstory)
 
-<TODO: copy installation instructions here>
+If you're curious on how it all work, head over to [Overview](http://www.klot.io/#/overview).
 
-## Next steps
+To see all the nitty gritty details, hit up [Architecture](http://www.klot.io/#architecture).
 
-If you want configure a sample app that tells your kids to wake up, in an Australian accent, go to the [sample app setup instructions](link).
+Ready to get started? Hit up [Install](Install.md) for how.
 
-Or,
-
-If you'd rather develop your own microservices to run on Kubernetes, read [about application setup in general](link).
-
-Or,
-
-If you have other purposes for running Kubernetes on Raspberry Pis, you're done! You can log in to [http://klot-io.local/](http://klot-io.local/) any time to reach your master node.
+Once running, you can install Apps from repos I created in GitHub. Right now, I just have the Redis service, but I'm looking to add more. Check out [Apps](Apps.md) for more.
