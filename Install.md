@@ -11,7 +11,7 @@
 ## Assumptions
 
 - Your network has DHCP and you plan to use it
-- You know how to set IP addresses on your network
+- You know how to reserve IP addresses on your remote (optional)
 
 ## Process
 
@@ -24,13 +24,14 @@ NOTE:  There's a lot of stuff coming up and will eventually be consistent. If so
   - Insert SD card into Pi.  Wire to your network (ethernet cable). Power up.
   - Wait a few minutes or so as the OS expands the filesystem. 
   - Get impatient and go to [http://klot-io.local/](http://klot-io.local/) anyway, understanding it might not come up right away or be persnickety.
-  - The site will recognize it has default settings and automatically log you in.
-  - If my browser trickery fails, just log in with the password 'kloudofthings'.
+  - Log in with the password 'kloudofthings'.
   - Oh btw, you're logging into your new Pi right now.
 - Configure Master
   - Set a new password. This'll be both for the GUI/API you're using and the pi account on the Pi (make sure it's like 8 chars long).
   - Decide whether to enable SSH or leave it disabled.  It's up to you, and you can change later through this page.
   - Enter the WiFi settings for your network or leave it as is to stay wired.
+    - You might want to go to your router and have the IP address for the Master reserved
+    - This will prevent the IP from changing. Mine doesn't seem to need it but I don't know every router.
   - Set the role to Master for this first one and give your cluster a name, lowercase, no spaces (I should have something check that and password too). 
   - Click Config.  You should now have to log in with your new password.
   - Note the site URL changed to (cluster)-klot-io.local. This is the hostname of the Master now and will be your home base going forward.
@@ -42,6 +43,10 @@ NOTE:  There's a lot of stuff coming up and will eventually be consistent. If so
   - To have it join as a Worker with different settings, click it's name and Config on its own site.
   - Back at the Master's Nodes, page, wait 20 seconds or so, and it'll appear in the Node listing as (name)-(cluster)-klot-io.local
   - If you've switched from Wired to Wireless, it may hang as NotReady.  Give it a minute and then power cycle the Worker.
-  - Repeat for as many Workers as needed.  Just make sure each name is unique (ya, should probably write something to check this too). 
+  - Repeat for as many Workers as needed.
+    - Do one at a time.
+    - Just Make sure each name is unique (ya, should probably write something to check this too).
 
 Congrats!  You have a Kubrernetes Cluster on Raspberry Pi's! Hit up [Apps](Apps.md) for what's next.
+
+To see what this system can do, check out [GUI](GUI.md)
