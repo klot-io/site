@@ -58,7 +58,7 @@
         The SD card is the Raspberry Pi's hard drive.
         When we install an image onto the SD card, we install an operating system, like installing Window ME from floppy disks. 
         The operating system we're using is just Raspbian with some stuff added.
-        Raspbian is a variant of Debian, which is distribution of Linux.
+        Raspbian is a variant of Debian, which is a distribution of Linux.
     </p>
 
     <p>
@@ -110,7 +110,7 @@
     <p>
         A Container is also a simulated computer in software (tenant) being run on a physical computer's hardware (host).
         This is done through interacting directly with the Operating System the host machine, not the hardware, using something called Docker.
-        Think of a Container occupying an furnished apartment.
+        Think of a Container occupying a furnished apartment.
         There's already beds, a washing machine, shared storage spaces, even a pool (of resources) that can be shared, like  memory and processing.
         You can even set limits on how much each tenant can use. 
     </p>
@@ -157,7 +157,7 @@
             <li>The User hits the GUI.</li>
             <li>The GUI hits the API.</li>
             <li>The API reads the current configuration and sends it back to the GUI.</li>
-            <li>The GUI present the infomration to the User in a friendly, easy to read format.</li>
+            <li>The GUI present the information to the User in a friendly, easy to read format.</li>
             <li>The User changes the information in the GUI.</li>
             <li>The GUI sends the new Configuration to the API.</li>
             <li>The API saves the Configuration as files.</li>
@@ -203,7 +203,6 @@
             <li>Resources accesible from inside Kubernetes.</li>
             <li>Resources accesible from outside Kubernetes.</li>
             <li>Other Apps, or really type of Apps, required by this App.</li>
-            <li>How to give this App access to another.</li>
             <li>How to give Users access to the App.</li>
         </ul>
         For those in the know with K-town (what I've just decided to call Kubernetes), the App Custom Resource Definition is created when the Master Node is spun up. 
@@ -218,7 +217,6 @@
             <li>API creates an App Resource in Kubernetes from file contents sets action to 'Install'.</li>
             <li>Daemon downloads all the Manifests listed in the Speech App.</li>
             <li>Daemon downloads and install the Redis App (because Speech App says it needs it).</li>
-            <li>Daemon configures Speech App using the Redis App's settings.</li>
             <li>Daemon creates a URL for us to access Speech App.</li>
         </ol>
         And with that, we tell Kubernetes how everything should be and it gets to work on that.
